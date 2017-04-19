@@ -1,0 +1,84 @@
+<% include ./partials/header.ejs  %>
+
+    <section>
+
+        <div class="row">
+            <div class="jumbotron col-md-6 col-md-offset-3">
+                <div class="text-center">
+                    <h1>
+                        <%= h1 %>
+                    </h1>
+
+                    <img class="img-rounded img-thumbnail" src="images/Rich-Freeman.jpg" alt="Rich Freeman" />
+                    <h2>
+                        <%= h2 %>
+                    </h2>
+
+
+                    <ul class="custom-bullet">
+                        <li>Professor Web Design and Development, Georgian College</li>
+                        <li>Youtube Star</li>
+                        <li>Bakes Great Cookies</li>
+                    </ul>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#checkout">Order Now !</button>
+
+                </div>
+                <!-- / text-center -->
+
+            </div>
+            <!-- / jumbotron -->
+        </div>
+        <!-- / row -->
+
+    </section>
+
+<!-- modal for stripe payment -->
+
+    <div class="modal fade" id="checkout">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="form" action="/charge" method="POST" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></span>
+                                    <input id="card-num" class="form-control" type="text" size="16" placeholder="Card number" autofocus="autofocus" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                                    <input id="card-exp" class="form-control" type="text" size="5" placeholder="MM/YY" />
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                                    <input id="card-cvc" class="form-control" type="text" size="4" placeholder="CVC" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="submit" type="button" class="btn btn-primary col-sm-12" data-progress-text="<span class='glyphicon glyphicon-refresh fa-spin'></span>"
+                        data-success-text="<span class='glyphicon glyphicon-ok'></span>">
+                    Pay
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <% include ./partials/footer.ejs %>

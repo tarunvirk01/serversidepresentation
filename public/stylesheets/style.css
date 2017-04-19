@@ -1,0 +1,42 @@
+
+ body {
+        margin: 8px;
+    }
+    .modal-dialog {
+        width: 350px;
+    }
+    .modal-header {
+        border: none;
+        padding: 0;
+    }
+    .modal-content {
+        padding: 10px;
+    }
+
+ 
+    h2 {
+        font-size: 3em;
+    }
+
+
+ul.custom-bullet {margin-left: -1.2em;}
+.custom-bullet li {display: block;}
+
+.custom-bullet li:before
+{
+    /*Using a Bootstrap glyphicon as the bullet point*/
+    content: "\f005";
+    font-family: "FontAwesome";
+
+    margin-right: .5em;
+  
+    color: #339966;
+}
+
+li {
+    font-size: 1.8em;
+}
+
+.footer {
+    text-align: center
+}
